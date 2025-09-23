@@ -2,7 +2,6 @@ package pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 
 public class HomePage {
     private WebDriver driver;
@@ -25,6 +24,10 @@ public class HomePage {
     public DropdownPage clickDropdownPage() {
         clickLink("Dropdown");
         return new DropdownPage(driver);
+    }
+    public HoverPage clickHoversLink(){
+        clickLink("Hovers");
+        return new HoverPage(driver);
     }
 
 
