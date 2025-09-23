@@ -10,7 +10,7 @@ public class HoverPage {
     private By figurebox = By.className("figure");
     private By boxCaption = By.className("figcaption");
 
-    public HoverPage(WebDriver driver){
+    public HoverPage(WebDriver driver) {
         this.driver = driver;
     }
 
@@ -22,27 +22,30 @@ public class HoverPage {
     }
 
     //Inner class for getting the name and view profile link
-    public class FigureCaptions{
+    public class FigureCaptions {
         private WebElement caption;
-        private By header = By.cssSelector(".figcaption h5");
-        private By link = By.cssSelector(".figcaption a");
+        private By header = By.tagName("h5");
+        private By link = By.tagName("a");
 
         //constructor
         public FigureCaptions(WebElement caption) {
             this.caption = caption;
         }
+
         //methods to interact with elements
-        public boolean isCaptionDisplayed(){
+        public boolean isCaptionDisplayed() {
             return caption.isDisplayed();
         }
 
-        public String getTitle(){
+        public String getTitle() {
             return caption.findElement(header).getText();
         }
-        public String getLink(){
+
+        public String getLink() {
             return caption.findElement(link).getAttribute("href");
         }
-        public String getLinkText(){
+
+        public String getLinkText() {
             return caption.findElement(link).getText();
         }
     }
